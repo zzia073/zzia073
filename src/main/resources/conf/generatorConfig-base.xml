@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!-- classPathEntry:数据库的JDBC驱动的jar包地址 -->
+	<classPathEntry location="E:\mysql\mysql-connector-java-5.1.29.jar" />
+	<context id="marketTables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://192.168.1.48:3306/cunxiaoer?useUnicode=true&amp;characterEncoding=utf-8" userId="root"
+			password="zjdroot">
+		</jdbcConnection>
+
+		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer true，把JDBC DECIMAL 和 
+			NUMERIC 类型解析为java.math.BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="true" />
+		</javaTypeResolver>
+
+		<!-- targetProject:生成实体类的位置 -->
+		<!-- <javaModelGenerator targetPackage="com.jiuying.user.entity" -->
+		<javaModelGenerator targetPackage="com.cunxiaoer.common.entity.farm"
+			targetProject="trial">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="true" />
+			<!-- 从数据库返回的值被清理前后的空格 -->
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+        <!-- targetProject:自动mapper的位置 -->
+		<!-- <sqlMapGenerator targetPackage="com.jiuying.user.mapper.base"  -->
+		<sqlMapGenerator targetPackage="com.cunxiaoer.common.mapper.farm" 
+			targetProject="trial">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+
+<!-- 			targetPackage="com.jiuying.user.dao.base" implementationPackage="com.jiuying.user.dao.base" -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.cunxiaoer.common.dao.farm" implementationPackage="com.cunxiaoer.common.dao.farm"
+			targetProject="trial">
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+<!-- 		<table tableName="farm_recording_file"></table> -->
+<!-- 		<table tableName="farm_recording_file"></table> -->
+<!-- 		<table tableName="farm_message"></table> -->
+<!-- 		<table tableName="farm_greenhouse_plant"></table> -->
+<!-- 		<table tableName="farm_operation"></table> -->
+<!-- 		<table tableName="farm_classify"></table> -->
+<!-- 		<table tableName="cxe_wechatuser"></table> -->
+<!-- 		<table tableName="farm_banner"></table> -->
+<!-- 		<table tableName="farm_delivery_order"></table> -->
+<!-- 		<table tableName="farm_greenhouses"></table> -->
+<!-- 		<table tableName="farm_greenhouses_land"></table> -->
+<!-- 		<table tableName="farm_land_order"></table> -->
+		<!-- <table tableName="farm_land_order_info"></table> -->
+<!-- 		<table tableName="farm_merchant"></table> -->
+<!-- 		<table tableName="farm_planting_file"></table> -->
+<!-- 		<table tableName="farm_planting_order"></table> -->
+<!-- 		<table tableName="farm_planting_progress"></table> -->
+<!-- 		<table tableName="farm_planting_status"></table> -->
+<!-- 		<table tableName="farm_planting_user"></table> -->
+<!-- 		<table tableName="farm_plants"></table> -->
+<!-- 		<table tableName="farm_praise"></table> -->
+<!-- 		<table tableName="farm_bussiness_banner"></table> -->
+<!-- 		<table tableName="farm_range"></table> -->
+<!-- 		<table tableName="farm_user"></table> -->
+<!-- 		<table tableName="farm_user_address"></table> -->
+<!-- 		<table tableName="farm_wechatuser"></table> -->
+<!-- 		<table tableName="farm_planting_msg"></table> -->
+<!-- 		<table tableName="farm_planting_msg_file"></table> -->
+<!-- 		<table tableName="farm_recording_file"></table> -->
+<!-- 		<table tableName="farm_camera"></table> -->
+<!-- 		<table tableName="farm_basket"></table> -->
+<!-- 		<table tableName="farm_delivery_basket"></table> -->
+<!-- 		<table tableName="farm_express"></table> -->
+<!-- 		<table tableName="farm_task_file"></table> -->
+<!-- 		<table tableName="farm_task_detail"></table> -->
+
+<!-- 小爱农场后台 -->
+	<!-- 	<table tableName="farm_firstmenu"></table>
+		<table tableName="farm_menu"></table>
+		<table tableName="farm_role"></table>
+		<table tableName="farm_role_menu"></table>
+		<table tableName="farm_user_role"></table>
+		<table tableName="farm_conuse"></table> -->
+<!-- 		<table tableName="farm_land_pay_order"></table> -->
+<!-- 		<table tableName="farm_task"></table> -->
+<!-- 		<table tableName="farm_logistics"></table> -->
+<!-- 		<table tableName="farm_resource"></table> -->
+<!-- 		<table tableName="farm_pushmsg"></table> -->
+<!-- 		<table tableName="farm_introduce"></table> -->
+<!-- 		<table tableName="farm_file"></table> -->
+<!-- 		<table tableName="farm_filetype"></table> -->
+<!-- 		<table tableName="farm_user_sharing"></table> -->
+<!-- 		<table tableName="farm_user_sharing_file"></table> -->
+<!-- 		<table tableName="farm_agency_money"></table> -->
+<!-- 		<table tableName="farm_agency_money_record"></table> -->
+<!-- 		<table tableName="farm_agency_order"></table> -->
+<!-- 		<table tableName="farm_agents_applyfor"></table> -->
+<!-- 		<table tableName="farm_discount"></table> -->
+<!-- 		<table tableName="farm_discount_user"></table> -->
+<!-- 		<table tableName="farm_reply"></table> -->
+		<table tableName="farm_withdraw_info"></table>
+<!-- 		<table tableName="farm_user_balance"></table> -->
+<!-- 		<table tableName="farm_trade_order"></table> -->
+<!-- 		<table tableName="farm_land_order_user"></table> -->
+<!-- 		<table tableName="farm_promote"></table> -->
+<!-- 		<table tableName="farm_order_discount"></table> -->
+<!-- 		<table tableName="farm_schedule_job"></table> -->
+<!-- 		<table tableName="farm_coupon"></table> -->
+<!-- 		<table tableName="farm_coupon_order"></table> -->
+	</context>
+</generatorConfiguration>
